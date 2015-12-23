@@ -10,7 +10,8 @@ set auto_path [list [pwd] {*}$auto_path]
 package require Site
 
 # Initialize Site
-Site init home [file normalize [file dirname [info script]]] config site.config debug 10 {*}$argv
+siteconf=$::env(HOME)/.wub/site.config
+Site init home [file normalize [file dirname [info script]]] config $siteconf debug 10 {*}$argv
 
 # Start Site Server(s)
 Site start 
